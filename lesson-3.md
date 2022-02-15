@@ -3,7 +3,7 @@
  * @Author: armin
  * @Date: 2022-02-15 14:32:36
  * @LastEditors: armin
- * @LastEditTime: 2022-02-15 16:47:01
+ * @LastEditTime: 2022-02-15 17:00:47
 -->
 :fire:实现 resolve 和 reject
 ------------------------
@@ -40,7 +40,7 @@ promise有三种状态：分别是 **pending**、**fulfilled** 和 **rejected**
 - **pending**可以转为**fulfilled**状态，但是不能逆转
 - **pending**也可以转为**rejected**状态，但是也不能逆转
 - 这里**fulfilled**和**rejected**也不能互转   
-![状态图](/img-1.png 'promise状态图')   
+![状态图](/images/img-1.png 'promise状态图')   
 因此我们需要提前把状态定义好   
 ```js
     class myPromise {
@@ -185,7 +185,7 @@ let promise1 = new myPromise((resolve, reject) => {
 （:mega:PS：如果这里有点蒙圈的话，可以参考一下网上有关 `this` 指向的文章，这里就不过多解释了）   
 对于`resolve`来说，这里就是给实例的`resolve()`方法绑定这个`this`为当前的实例对象，并且执行`this.resolve()`方法，`reject`同理：
 
-![示意图](/img-2.png 'this指向示意图')   
+![示意图](/images/img-2.png 'this指向示意图')   
 
 现在再来测试一下我们的代码：   
 ```js
@@ -235,6 +235,6 @@ let promise2 = new Promise((resolve,reject) => {
 })
 console.log(promise2)
 ```
-![原生Promise](/img-3.png '原生Promise')  
+![原生Promise](/images/img-3.png '原生Promise')  
 说明执行结果完全符合我们的预期，是不是觉得离成功又进了一步呢~ :clap::clap::clap:   
 下一步就需要实现`then`方法了...
