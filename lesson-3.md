@@ -3,7 +3,7 @@
  * @Author: armin
  * @Date: 2022-02-15 14:32:36
  * @LastEditors: armin
- * @LastEditTime: 2022-02-15 17:00:47
+ * @LastEditTime: 2022-02-15 17:19:39
 -->
 :fire:实现 resolve 和 reject
 ------------------------
@@ -152,7 +152,7 @@ promise有三种状态：分别是 **pending**、**fulfilled** 和 **rejected**
 ```
 所以现在只有一种可能，调用`this.PromiseState`的时候并没有调用`constructor`里面的`this.PromiseState`，这里的`this`跟丢咯~:joy::joy::joy:   
 我们在`new`一个新实例的时候执行的是`constructor`里的内容，也就是说`constructor`里的`this`确实是新实例的，但现在我们是在新实例被创建后再在外部环境下执行`resolve()`方法的，这里的`resolve()`看着像是和实例一起执行的，其实不然，也就**相当于不在`class`内部使用这个`this`，而我们没有在外部定义任何 `PromiseState` 变量，因此这里会报错**   
-解决`class`的`this`指向问题一般会用剪头函数，`bind`或者`proxy`，这里我们就使用 `bind` 来绑定 `this` :smiley_cat: ： 
+解决`class`的`this`指向问题一般会用箭头函数，`bind`或者`proxy`，这里我们就使用 `bind` 来绑定 `this` :smiley_cat: ： 
 ```js
   class myPromise {
     static PENDING = 'pending';
