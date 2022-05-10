@@ -1,0 +1,46 @@
+<!--
+ * @Descripttion: 请填写简介
+ * @Author: armin
+ * @Date: 2022-04-21 16:26:30
+ * @LastEditors: armin
+ * @LastEditTime: 2022-04-21 16:26:30
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class myPromise {
+        static PENDING = 'pending'
+        static FULFILLED = 'fulfilled'
+        static REJECTED = 'rejected'
+        constructor(func) {
+          this.PromiseState = myPromise.PENDING
+          this.PromiseResult = null
+          func(this.resolve, this.reject)
+        }
+        resolve(result) {
+          if (this.PromiseState === myPromise.PENDING) {
+            this.PromiseState = myPromise.FULFILLED
+            this.PromiseResult = result
+          }
+        }
+        reject(reason) {
+          if (this.PromiseState === myPromise.PENDING) {
+            this.PromiseState = myPromise.REJECTED
+            this.PromiseResult = reason
+          }
+        }
+      }
+
+      let pr1 = new myPromise((resolve, reject) => {
+        resolve('我来试试')
+      })
+    </script>
+  </body>
+</html>

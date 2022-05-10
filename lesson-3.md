@@ -3,7 +3,7 @@
  * @Author: armin
  * @Date: 2022-02-15 14:32:36
  * @LastEditors: armin
- * @LastEditTime: 2022-02-15 17:19:39
+ * @LastEditTime: 2022-02-15 17:34:37
 -->
 :fire:实现 resolve 和 reject
 ------------------------

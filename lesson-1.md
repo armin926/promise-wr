@@ -3,7 +3,7 @@
  * @Author: armin
  * @Date: 2022-02-14 17:14:45
  * @LastEditors: armin
- * @LastEditTime: 2022-02-15 16:57:11
+ * @LastEditTime: 2022-02-16 09:16:58
 -->
 :star2:手写Promise（1）——定义初始结构，实现resolve和reject
 ====================================================
