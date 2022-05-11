@@ -273,7 +273,8 @@ promise1.then(
 ▪ `func(this.resolve.bind(this), this.reject.bind(this));` 这里的`this.reject`意思是：把类方法`reject()`作为参数 传到构造函数`constructor` 里要执行的`func()`方法里，只是一个参数，并不执行，只有创建实例后调用`reject()`方法的时候才执行，此时`this`的指向已经变了，所以想要正确调用`myPromise`的`reject()`方法就要通过`.bind(this))`改变`this`指向。
 
 ▪ `this.reject(error)`，这里的`this.reject()`，是直接在构造函数里执行类方法，`this`指向不变，`this.reject()`就是直接调用类方法`reject()`，所以不用再进行`this`绑定。
-◾ 这里考察了this绑定的一个细节:tag:：
+
+◾ 这里考察了this绑定的一个细节:mag:：
 `call、apply和bind`都可以改变函数体内部 this 的指向，**但是 `bind` 和 `call/apply` 有一个很重要的区别：一个函数被 `call/apply` 的时候，会立即执行函数，但是 `bind` 会创建一个新函数，不会立即执行。**
 
 这就是前面为什么说， this.reject.bind(this)只是作为参数，并没有直接执行的原因了~:smile:
