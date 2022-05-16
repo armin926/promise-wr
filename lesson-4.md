@@ -45,7 +45,7 @@ promise.then(
         console.log('fulfilled', result);
     },
     reason => {
-        console.log('rejected', reason.message);
+        console.log('rejected', reason);
     }
 )
 ```
