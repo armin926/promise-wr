@@ -116,7 +116,7 @@ let promise1 = new myPromise((resolve, reject) => {
            console.log(result)
        },
        reason => {
-           console.log(reason.message)
+           console.log(reason)
        }
    )
 ```
