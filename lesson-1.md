@@ -5,7 +5,7 @@
  * @LastEditors: armin
  * @LastEditTime: 2022-02-16 09:16:58
 -->
-:star2:手写Promise（1）——定义初始结构，实现resolve和reject
+:star2:手写Promise（1）——回顾核心要点，定义初始结构，实现resolve、reject以及then方法
 ====================================================
 :mortar_board:Promise核心要点
 ---------------
