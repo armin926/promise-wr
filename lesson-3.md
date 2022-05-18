@@ -182,7 +182,7 @@ let promise1 = new myPromise((resolve, reject) => {
     resolve('我来试试');
 })
 ``` 
-（:mega:PS：如果这里有点蒙圈的话，可以参考一下网上有关 `this` 指向的文章，这里就不过多解释了）   
+（:mega:PS：如果这里有点蒙圈的话，可以参考一下网上有关 [`this` 指向](https://www.jianshu.com/p/f70dc8c030c1)的文章，这里就不过多解释了）   
 对于`resolve`来说，这里就是给实例的`resolve()`方法绑定这个`this`为当前的实例对象，并且执行`this.resolve()`方法，`reject`同理：
 
 ![示意图](/images/img-2.png 'this指向示意图')   
