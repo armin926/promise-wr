@@ -41,6 +41,28 @@
       let pr1 = new myPromise((resolve, reject) => {
         resolve('我来试试')
       })
+
+      console.log(1)
+      let promise1 = new myPromise((resolve, reject) => {
+        console.log(2)
+        setTimeout(() => {
+          console.log('A', promise1.PromiseState)
+          resolve('这次一定')
+          console.log('B', promise1.PromiseState)
+          console.log(4)
+        })
+        console.log(5)
+      })
+      promise1.then(
+        (result) => {
+          console.log('C', promise1.PromiseState)
+          console.log('fulfilled:', result)
+        },
+        (reason) => {
+          console.log('rejected:', reason)
+        }
+      )
+      console.log(3)
     </script>
   </body>
 </html>
